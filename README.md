@@ -2,11 +2,11 @@
 
 ## Atualize os seus dados:
 
-- Nome:
-- Matrícula:
-- Curso:
-- Semestre/Ano correntes:
-- Link para o seu GitHub:
+- Nome: Edgar Henrique Alves Rodrigues
+- Matrícula: 15.1.8029
+- Curso: Engenharia de Computação
+- Semestre/Ano correntes: 2020/3 - PLE Emergencial COVID-19
+- Link para o seu GitHub: https://github.com/EdgarAlvesr
 
 ## [Projeto final:](./Projeto/README.md) 
 
