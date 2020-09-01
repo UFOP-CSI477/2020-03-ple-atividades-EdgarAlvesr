@@ -10,5 +10,5 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Apresente uma breve descrição do seu projeto.
+Sistema de reserva da sala de reuniões do ICEA...
 
