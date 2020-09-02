@@ -7,6 +7,13 @@
 
         <style type="text/css">
             
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+            html {
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+            }
+            
             body {
                 margin: 0;
             }
@@ -31,6 +38,49 @@
                 border-style: solid;
                 border-radius: 15px;
             }
+
+            a {
+                color: white;
+                background-color: blue;
+                text-decoration: none;
+                padding: 10px;
+            }
+
+            a:hover {
+                background-color: red;
+                font-weight: bold;
+            }
+
+            a:active {
+                background-color: green;
+                color: black;
+
+            }
+
+            a:link {
+                text-decoration: underline;
+                color: orange;
+            }
+
+            a:visited {
+                background-color: #c9c9c9;
+            }
+
+            .flex {
+                display: flex;
+                flex-direction: row;
+                flex-flow: row wrap;
+                justify-content: center;
+            }
+
+            .flex div {
+                background-color: blue;
+                width: 200px;
+                margin: 20px;
+                line-height: 100px;
+                text-align: center;
+                border-radius: 20px;
+            }
         
         </style>
 
@@ -51,7 +101,7 @@
 
         <p style="color: red;">Texto em parágrafo.</p>
 
-        <div>
+        <div class="flex">
             <div>
                 <a href="http://www.ufop.br" target="_blanck">Site da UFOP</a>
             </div>
