@@ -21,7 +21,7 @@
   - Listagem das salas para reunião e tela para detalhamento de cada uma, com seus respectivos agendamentos;
   - Agendamento de reunião a partir de um horário, listando as salas disponíveis para o usuário;
   - Edição e exclusão de agendamento, por administradores e responsáveis pela reunião;
-  - Controle de acesso para usuários, gerando diferentes permissões a cada tipo de usuário.  -
+  - Controle de acesso para usuários, gerando diferentes permissões a cada tipo de usuário.
  
 <!-- Apresentar restrições de funcionalidades e de escopo. -->
 ### 3. Restrições
