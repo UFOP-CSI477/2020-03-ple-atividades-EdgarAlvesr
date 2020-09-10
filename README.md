@@ -10,7 +10,7 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Sistema de reserva da sala de reuniões do ICEA
+**Sistema de reserva da sala de reuniões do ICEA**
 
 O projeto final consiste na construção de um sistema de reserva de salas de reuniões para o ICEA. Nesse será possível:  
 - Consultar as salas, verificando as salas disponíveis e ocupadas;
