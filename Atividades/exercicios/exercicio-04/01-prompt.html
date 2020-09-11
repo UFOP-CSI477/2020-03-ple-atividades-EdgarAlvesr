@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt JS</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script>
+
+        let pessoa = new Pessoa();
+
+        function Pessoa(nome, sobrenome, idade, endereco){
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.idade = idade;
+            this.endereco = endereco;
+        }
+
+        function inserirDados(){
+            let nome = window.prompt("Insira seu nome:");
+            let sobrenome = window.prompt("Sobrenome:");
+            let idade = window.prompt("Idade:");
+            let endereco = window.prompt("Endereço:");
+
+            pessoa = new Pessoa(nome, sobrenome, idade, endereco);
+            console.log(pessoa);
+        }
+
+        function apresentarDadosForm(pessoa){
+            document.getElementById("nome").value = pessoa.nome;
+            document.getElementById("sobrenome").value = pessoa.sobrenome;
+            document.getElementById("idade").value = pessoa.idade;
+            document.getElementById("endereco").value = pessoa.endereco;
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container-fluid my-3">
+        
+        <h1>Prompt request em JS</h1>
+        
+        <form>
+            <div class="form-row">
+                
+                <div class="form-group col-sm-1">
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="nome" id="nome">
+                </div>
+
+                <div class="form-group col-sm-1">
+                    <label for="sobrenome">Sobrenome</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="sobrenome" id="sobrenome">
+                </div>
+
+                <div class="form-group col-sm-1">
+                    <label for="idade">Idade</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="idade" id="idade">
+                </div>
+
+                <div class="form-group col-sm-1">
+                    <label for="endereco">Endereço</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="endereco" id="endereco">
+                </div>
+
+            </div>
+        </form>
+
+        <input type="button" value="Inserir dados no Formulário" onclick="inserirDados()">
+        <input type="button" value="Apresentar dados salvos" onclick="apresentarDadosForm(pessoa)">
+
+    </div>
+</body>
+</html>
