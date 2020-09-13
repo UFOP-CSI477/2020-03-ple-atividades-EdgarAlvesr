@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desmatamento no Brasil</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: rgba(23, 202, 23, 0.897);
+        }
+        
+        #div_desmatamento{
+            font-size: 40px;
+            padding: 3rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid my-3">
+
+        <div class="text-center">
+            <h1><strong>Desmatamento médio no Brasil</strong></h1>
+            <p>Em 2019 foram desmatados, em média, 3.339 hectares de terra por dia no Brasil.</p>
+            <p>Em 2020, a estimativa é que esse valor seja superado e agrave ainda mais a situação da fauna e flora do
+                país.</p>
+
+        </div>
+
+        <div id="div_desmatamento" class="text-center">
+        </div>
+
+        <div class="p-3">
+            <p><strong>Desmatamento médio:</strong></p>
+            <p>3.339 hectares por dia</p>
+            <p>139 hectares por hora</p>
+            <p>0,039 hectares por segundo</p>
+            <p>2 campos de futebol por dia</p>
+            <p> * Dados baseados na média de 2019.</p>
+        </div>
+
+        <div class="pt-3">
+            Fonte: <a
+                href="https://g1.globo.com/natureza/noticia/2020/05/26/amazonia-perdeu-em-media-21-mil-hectares-de-floresta-por-dia-em-2019-aponta-levantamento.ghtml">https://g1.globo.com/natureza/noticia/2020/05/26/amazonia-perdeu-em-media-21-mil-hectares-de-floresta-por-dia-em-2019-aponta-levantamento.ghtml</a>
+        </div>
+    </div>
+
+
+    <script>
+
+        // 1 ha = 10.000 m2
+        // campo futebol fifa = 105m x 68m = 7140 m2 = 0,714 ha
+
+        let desmatamento_acumulado = 0;
+        let desmatamento_camposfut_acumulado = 0;
+
+        const taxa_desmatamento_5seg = 0.193;
+        const campo_futebol_hectare = 0.714;
+
+        setInterval(atualizaDesmatamento5seg, 5000);
+
+        function atualizaDesmatamento5seg() {
+            desmatamento_acumulado += taxa_desmatamento_5seg;
+
+            let desmatamento_em_campos = desmatamento_acumulado / campo_futebol_hectare;
+            desmatamento_camposfut_acumulado = + desmatamento_em_campos;
+
+            document.getElementById("div_desmatamento").innerText = `Enquanto você estava aqui...
+            ${desmatamento_acumulado.toFixed(2)} hectares foram desmatados.
+            Cerca de ${desmatamento_camposfut_acumulado.toFixed(2)} campos de futebol.`;
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form JS</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container-fluid my-3">
+
+        <h1>Form request em JS</h1>
+
+        <form>
+            <div class="form-row">
+
+                <div class="form-group col-sm-1">
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="nome" id="nome">
+                </div>
+
+                <div class="form-group col-sm-1">
+                    <label for="sobrenome">Sobrenome</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="sobrenome" id="sobrenome">
+                </div>
+
+                <div class="form-group col-sm-1">
+                    <label for="idade">Idade</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="idade" id="idade">
+                </div>
+
+                <div class="form-group col-sm-1">
+                    <label for="endereco">Endereço</label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" name="endereco" id="endereco">
+                </div>
+
+            </div>
+        </form>
+
+        <input type="button" value="Salvar dados do Formulário" onclick="salvarDadosForm()">
+        <input type="button" value="Apresentar dados salvos" onclick="apresentarDadosForm(pessoa)">
+
+        <div class="row p-3" id="div_dados"></div>
+
+    </div>
+
+
+    <script>
+
+        let pessoa;
+
+        function Pessoa(nome, sobrenome, idade, endereco){
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.idade = idade;
+            this.endereco = endereco;
+        }
+
+        function salvarDadosForm(){
+            let nome = document.getElementById("nome").value;
+            let sobrenome = document.getElementById("sobrenome").value;
+            let idade = document.getElementById("idade").value;
+            let endereco = document.getElementById("endereco").value;
+
+            pessoa = new Pessoa(nome, sobrenome, idade, endereco);
+            
+            console.log(pessoa);
+        }
+
+        function apresentarDadosForm(pessoa){
+            
+            if(pessoa == undefined){
+                output = "Não há nenhum objeto salvo!";
+            }
+            else{
+                output = `O objeto salvo contém os seguintes atributos:
+                Nome: ${pessoa.nome}
+                Sobrenome: ${pessoa.sobrenome}
+                Idade: ${pessoa.idade}
+                Endereço: ${pessoa.endereco}`;
+            }
+            
+            console.log(pessoa);
+            document.getElementById("div_dados").innerText = output;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
