@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida de carrinhos de rolimã</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1>Corrida de carrinhos de rolimã</h1>
+        <p>Insira os participantes da corrida com seus respectivos tempos e veja os vencedores da corrida.</p>
+    </div>
+
+    <div class="container">
+        <div class="pb-3 text-center">
+            <p>Insira os nomes e tempos (em segundos) dos participantes em suas respectivas posições de largada</p>
+        </div>
+
+        <form name="form_corredores" class="">
+            <div class="form-row text-center">
+                
+                <div class="col-sm-4 form-group">
+                    Largada
+                </div>
+                <div class="col-sm-4 form-group">
+                    Competidor
+                </div>
+                <div class="col-sm-4 form-group">
+                    Tempo (segundos)
+                </div>
+
+                <div class="col-sm-4 form-group">
+                    <span>#1</span>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <input type="text" name="p1_nome" id="p1_nome" value="" class="form-control">
+                </div>
+                <div class="col-sm-4 form-group d-flex justify-content-center">
+                    <input type="number" name="p1_tempo" id="p1_tempo" value="" class="form-control col-sm-3">
+                </div>
+
+                <div class="col-sm-4 form-group">
+                    <span>#2</span>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <input type="text" name="p2_nome" id="p2_nome" value="" class="form-control">
+                </div>
+                <div class="col-sm-4 form-group d-flex justify-content-center">
+                    <input type="number" name="p2_tempo" id="p2_tempo" value="" class="form-control col-sm-3">
+                </div>
+
+                <div class="col-sm-4 form-group">
+                    <span>#3</span>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <input type="text" name="p3_nome" id="p3_nome" value="" class="form-control">
+                </div>
+                <div class="col-sm-4 form-group d-flex justify-content-center">
+                    <input type="number" name="p3_tempo" id="p3_tempo" value="" class="form-control col-sm-3">
+                </div>
+
+                <div class="col-sm-4 form-group">
+                    <span>#4</span>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <input type="text" name="p4_nome" id="p4_nome" value="" class="form-control">
+                </div>
+                <div class="col-sm-4 form-group d-flex justify-content-center">
+                    <input type="number" name="p4_tempo" id="p4_tempo" value="" class="form-control col-sm-3">
+                </div>
+
+                <div class="col-sm-4 form-group">
+                    <span>#5</span>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <input type="text" name="p5_nome" id="p5_nome" value="" class="form-control">
+                </div>
+                <div class="col-sm-4 form-group d-flex justify-content-center">
+                    <input type="number" name="p5_tempo" id="p5_tempo" value="" class="form-control col-sm-3">
+                </div>
+
+                <div class="col-sm-4 form-group">
+                    <span>#6</span>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <input type="text" name="p6_nome" id="p6_nome" value="" class="form-control">
+                </div>
+                <div class="col-sm-4 form-group d-flex justify-content-center">
+                    <input type="number" name="p6_tempo" id="p6_tempo" value="" class="form-control col-sm-3">
+                </div>
+
+                <div class="col-sm-12 p-2">
+                    <input type="button" value="Calcular Resultado da Corrida" onclick="calcularCorrida()" class="btn btn-primary">
+                </div>
+
+            </div>
+        </form>
+
+        <div class="table-responsive p-3" id="div_resultados">
+        </div>
+
+
+    </div>
+
+
+    <script src="corrida.js"></script>
+</body>
+
+</html>

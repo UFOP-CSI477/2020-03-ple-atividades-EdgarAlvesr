@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnitude Ritcher</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1>Cálculo da Magnitude de Terremotos</h1>
+        <p>Insira os dados necessários e tenha a magnitude do terremoto segundo a escala Ritcher</p>
+    </div>
+
+    <div class="container">
+        
+        <form name="form_imc" class="">
+            <div class="form-row text-center">
+                
+                <div class="col-sm-12 form-group">
+                    <label for="amplitude">Qual é a amplitude em milímetros?</label>
+                    <div class="d-flex justify-content-center">
+                        <label for="amplitude">A (mm) = </label>
+                        <input type="text" name="amplitude" id="amplitude" placeholder="Ex.: 23" class="form-control col-sm-3">
+                    </div>
+                </div>
+                
+                <div class="col-sm-12 form-group p-3">
+                    <label for="tempo">Qual é o intervalo de tempo (em segundos) entre a onda superficial (S) e a onda de pressão
+                        máxima (P)?</label>
+                    <div class="d-flex justify-content-center">
+                        <label for="tempo">t (s) = </label>
+                        <input type="text" name="tempo" id="tempo" placeholder="Ex.: 24" class="form-control col-sm-3">
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 p-2">
+                    <input type="button" value="Calcular Magnitude Ritcher" onclick="calcularRitcher()" class="btn btn-primary">
+                </div>
+                
+            </div>
+        </form>
+
+        <div class="p-3 text-center" id="div_resultados">
+        </div>
+
+    </div>
+
+    <script src="escala.js"></script>
+
+</body>
+</html>

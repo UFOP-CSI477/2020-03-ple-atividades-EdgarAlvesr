@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IMC</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1>Cálculo de Índice de Massa Corporal (IMC)</h1>
+        <p>Insira seu peso e altura e verifique como está o seu IMC.</p>
+    </div>
+
+    <div class="container">
+        
+        <form name="form_imc" class="">
+            <div class="form-row text-center d-flex justify-content-center">
+                
+                <div class="col-sm-3 form-group">
+                    <label for="altura">Qual a sua altura (em metros)?</label>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" name="altura" id="altura" placeholder="Ex.: 1.79" class="form-control col-sm-6">
+                    </div>
+                </div>
+
+                <div class="col-sm-3 form-group">
+                    <label for="peso">Qual o seu peso (em Kg)?</label>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" name="peso" id="peso" placeholder="Ex.: 70.8" class="form-control col-sm-6">
+                    </div>
+                </div>
+
+                <div class="col-sm-12 p-2">
+                    <input type="button" value="Calcular IMC" onclick="calcularIMC()" class="btn btn-primary">
+                </div>
+                
+            </div>
+        </form>
+
+        <div class="p-3 text-center" id="div_resultados">
+        </div>
+
+    </div>
+
+    <script src="imc.js"></script>
+
+</body>
+</html>
