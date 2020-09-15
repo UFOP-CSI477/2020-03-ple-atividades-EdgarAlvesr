@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1>Calculadora simples</h1>
+        <p>Clique nos botões para utitilizar a calculadora</p>
+    </div>
+
+    <div class="container">
+
+        <form name="form_visor">
+            <div class="p-2 col-sm-12 text-center d-flex justify-content-center">
+                <div class="col-sm-5">
+                    <input type="text" name="visor" id="visor" class="form-control">
+                </div>
+            </div>
+        </form>
+
+        <div class="col-sm-12 text-center m-1">
+            <input type='button' value='SuperCalc 2000' class='btn col-sm-2' disabled> 
+            <input type='button' value='C' class='btn btn-secondary col-sm-2' onclick='limpar()'> 
+        </div>
+        <div class="col-sm-12 text-center m-1">
+            <input type='button' value='7' class='btn btn-secondary col-sm-1' onclick='inserir("7")'> 
+            <input type='button' value='8' class='btn btn-secondary col-sm-1' onclick='inserir("8")'>
+            <input type='button' value='9' class='btn btn-secondary col-sm-1' onclick='inserir("9")'>
+            <input type='button' value='/' class='btn btn-secondary col-sm-1' onclick='inserir("/")'>
+        </div>
+        <div class="col-sm-12 text-center m-1">
+            <input type='button' value='4' class='btn btn-secondary col-sm-1' onclick='inserir("4")'> 
+            <input type='button' value='5' class='btn btn-secondary col-sm-1' onclick='inserir("5")'>
+            <input type='button' value='6' class='btn btn-secondary col-sm-1' onclick='inserir("6")'>
+            <input type='button' value='*' class='btn btn-secondary col-sm-1' onclick='inserir("*")'>
+        </div>
+        <div class="col-sm-12 text-center m-1">
+            <input type='button' value='1' class='btn btn-secondary col-sm-1' onclick='inserir("1")'> 
+            <input type='button' value='2' class='btn btn-secondary col-sm-1' onclick='inserir("2")'>
+            <input type='button' value='3' class='btn btn-secondary col-sm-1' onclick='inserir("3")'>
+            <input type='button' value='-' class='btn btn-secondary col-sm-1' onclick='inserir("-")'>
+        </div>
+        <div class="col-sm-12 text-center m-1">
+            <input type='button' value='0' class='btn btn-secondary col-sm-1' onclick='inserir("0")'> 
+            <input type='button' value='.' class='btn btn-secondary col-sm-1' onclick='inserir(".")'>
+            <input type='button' value='=' class='btn btn-secondary col-sm-1' onclick='total()'>
+            <input type='button' value='+' class='btn btn-secondary col-sm-1' onclick='inserir("+")'>
+        </div>
+
+    </div>
+
+    <script src="calculadora.js"></script>
+
+</body>
+</html>
