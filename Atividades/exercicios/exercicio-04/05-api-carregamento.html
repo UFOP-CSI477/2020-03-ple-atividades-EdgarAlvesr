@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API IBGE</title>
+
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body onload="carregarEstados()">
+    
+    <div class="jumbotron">
+        <h1>API IBGE</h1>
+        <p>Carregamento de API via fetch no JS</p>
+    </div>
+
+    <div class="container">
+
+        <form>
+            <div class="form-row">
+
+                <div class="col-sm-2 form-group mt-3">
+                    <input type="button" value="Carregar estados" class="btn btn-primary" onclick="carregarEstados()">
+                </div>
+                
+                <div class="col-sm-3 form-group text-center">
+                    <label for="estados">Estado</label>
+                    <select name="estados" id="estados" class="form-control" onchange="carregarCidades()">
+                        <option value="">Selecione:</option>
+                    </select>
+                </div>
+                
+                <div class="col-sm-3 form-group text-center">
+                    <label for="cidades">Cidade</label>
+                    <select name="cidades" id="cidades" class="form-control" onchange="carregarDistritos()">
+                        <option value="">Selecione:</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-3 form-group text-center">
+                    <label for="distritos">Distrito</label>
+                    <select name="distritos" id="distritos" class="form-control">
+                        <option value="">Selecione:</option>
+                    </select>
+                </div>
+        
+            </div>
+        </form>
+
+    </div>
+
+
+    <script src="05-api-carregamento.js"></script>
+
+</body>
+</html>
