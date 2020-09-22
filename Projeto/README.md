@@ -1,61 +1,38 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# **CSI477-2020-03 - PLE - Proposta de Trabalho Final**
+## *Aluno: Edgar Henrique Alves Rodrigues*
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+--------------
 
-## About Laravel
+<!-- Descrever um resumo sobre o trabalho. -->
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Resumo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  A fim de centralizar e gerenciar o uso das salas de reunião do ICEA, será criado um sistema que gerencie o uso dessas salas. No sistema será possível ter a visibilidade das salas e o planejamento de horários para cada uma, demonstrando seus respectivos status. Haverá o agendamento da reunião a partir de um horário, dando ao usuário a opção de escolher a sala que esteja disponível. Para cada tipo de usuário diferente haverão diferentes permissões, gerando assim um controle de acesso e melhor gerenciamento no sistema. E, aleḿ disso, serão disponibilizadas telas de login, listagem de salas, detalhamento de horário e demais visibilidades que facilitem a integração com o usuário.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<!-- Apresentar o tema. -->
+### 1. Tema
 
-## Learning Laravel
+  O trabalho final tem como tema o desenvolvimento de um **Sistema de Reservas de Salas de Reunião do ICEA**. Para que seja possível organizar e ter um planejamento sobre o uso das salas do instituto será construído um sistema que gerencie esse aspectos. O sistema irá dispor de visões para a lista de salas de reunião, demonstrando as salas disponíveis e ocupadas no horário escolhido, assim como um detalhamento da sala e suas respectivas reuniões agendadas. Além disso, haverá diferentes visões para usuários, com controle de acesso para determinadas permissões de uso, como cadastramento, edição e exclusão.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<!-- Descrever e limitar o escopo da aplicação. -->
+### 2. Escopo
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  Este projeto terá as seguintes funcionalidades:
+  - Listagem das salas para reunião e tela para detalhamento de cada uma, com seus respectivos agendamentos;
+  - Agendamento de reunião a partir de um horário, listando as salas disponíveis para o usuário;
+  - Edição e exclusão de agendamento, por administradores e responsáveis pela reunião;
+  - Controle de acesso para usuários, gerando diferentes permissões a cada tipo de usuário.
+ 
+<!-- Apresentar restrições de funcionalidades e de escopo. -->
+### 3. Restrições
 
-## Laravel Sponsors
+  Neste trabalho não serão considerados integrações com agendas do usuário e lembretes por e-mail sobre uma reunião, devido à esses recursos necessitarem de permissões sensíveis que necessitariam maior nível de segurança e envolverem a contração de um serviço de e-mails externo.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
+### 4. Protótipo
 
-### Premium Partners
+  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+### 5. Referências
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  - Bootstrap 4.5 Documentation. Disponível em: <https://getbootstrap.com/docs/4.5/getting-started/introduction/>. Acesso em: 10 de setembro de 2020.
