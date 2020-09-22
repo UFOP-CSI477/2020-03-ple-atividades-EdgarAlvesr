@@ -20,7 +20,8 @@ class Produto implements ModelInterface {
 
     public function getAll()
     {
-        
+        $query_str = "SELECT * FROM produtos";
+        return $query_str;
     }
 
     public function get($id)

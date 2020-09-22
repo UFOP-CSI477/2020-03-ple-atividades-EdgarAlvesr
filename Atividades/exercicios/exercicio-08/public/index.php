@@ -2,16 +2,23 @@
 
 require '../vendor/autoload.php';
 
-use App\Models\Estado;
 use App\Database\Connection;
 use App\Database\AdapterSQLite;
 
-$estado = new Estado(1, "Minas Gerais", "MG");
-var_dump($estado);
 
 $connection = new Connection(new AdapterSQLite());
-var_dump($connection);
+// var_dump($connection);
 
 $connection->getAdapter()->open();
-$connection->getAdapter()->get();
+
+$query_str = "SELECT * FROM estados";
+$estados = $connection->getAdapter()->get()->query($query_str);
+
+$query_str = "SELECT * FROM produtos";
+$produtos = $connection->getAdapter()->get()->query($query_str);
+
+require_once '../App/Views/Estado.php';
+require_once '../App/Views/Produto.php';
+
+
 $connection->getAdapter()->close();

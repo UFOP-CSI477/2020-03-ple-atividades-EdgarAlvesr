@@ -20,7 +20,8 @@ class Estado implements ModelInterface {
 
     public function getAll()
     {
-        
+        $query_str = "SELECT * FROM estados";
+        return $query_str;
     }
 
     public function get($id)

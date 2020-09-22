@@ -24,7 +24,7 @@ class AdapterSQLite implements AdapterInterface {
 
     public function close()
     {
-        $this->connection->close();
+        $this->connection = null;
     }
 
     public function get()
