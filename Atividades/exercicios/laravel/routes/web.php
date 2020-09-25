@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Models\Produto;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::get('/produtos/todos', function(){
+
+    $produtos = Produto::all();
+
+    return view('lista', ['dados' => $produtos]); 
+});
+
+Route::get('/produtos/{id}', function($id) {
+
+    $produto[] = Produto::findOrFail($id);
+    //findOrFail retorna erro 404 se não encontrar e para a execução
+    //produto[] tem que ser array para não dar erro no @foreach da view 'lista'
+
+    return view('lista', ['dados' => $produto]);
 });
