@@ -14,24 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Models\Produto;
+use App\Http\Controllers\ProdutoController;
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('principal');
+})->name('principal');
+
+Route::resource('/produtos', ProdutoController::class);
 
 
-Route::get('/produtos/todos', function(){
+// Route::get('/produtos/todos', function(){
 
-    $produtos = Produto::all();
+//     $produtos = Produto::all();
 
-    return view('lista', ['dados' => $produtos]); 
-});
+//     return view('lista', ['dados' => $produtos]); 
+// });
 
-Route::get('/produtos/{id}', function($id) {
+// Route::get('/produtos/{id}', function($id) {
 
-    $produto[] = Produto::findOrFail($id);
-    //findOrFail retorna erro 404 se não encontrar e para a execução
-    //produto[] tem que ser array para não dar erro no @foreach da view 'lista'
+//     $produto[] = Produto::findOrFail($id);
+//     //findOrFail retorna erro 404 se não encontrar e para a execução
+//     //produto[] tem que ser array para não dar erro no @foreach da view 'lista'
 
-    return view('lista', ['dados' => $produto]);
-});
+//     return view('lista', ['dados' => $produto]);
+// });
