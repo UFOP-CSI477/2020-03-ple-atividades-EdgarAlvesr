@@ -14,7 +14,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::orderBy('nome')->get();
+        $produtos = Produto::orderBy('id')->get();
         
         return view('produtos.index', ['produtos' => $produtos]);
     }
@@ -24,9 +24,10 @@ class ProdutoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() //method = 'post'. Action = "store()"
     {
-        //
+        //Cria formulário somente. Redireciona para store fazer a persistência dos dados
+        return view('produtos.create');
     }
 
     /**
@@ -37,7 +38,17 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // OPÇÃO DE SINTAXE
+        // $estado = new Estado;
+        // $estado->nome = $request->nome;
+        // $estado->sigla = $request->sigla;
+        // $estado->save();
+        
+        // dd($request);
+
+        Produto::create($request->all());
+        session()->flash('mensagem', 'Produto cadastrado com sucesso!');
+        return redirect()->route('produtos.index');
     }
 
     /**
@@ -48,7 +59,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        //
+        return view('produtos.show', ['produto' => $produto]);
     }
 
     /**
@@ -59,7 +70,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        return view('produtos.edit', ['produto' => $produto]);
     }
 
     /**
@@ -71,7 +82,14 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        // dump($request->all());
+        // dd($produto);
+
+        $produto->fill($request->all());
+        $produto->save();
+
+        session()->flash('mensagem', "Produto atualizado com sucesso");
+        return redirect()->route('produtos.index');
     }
 
     /**
@@ -82,6 +100,10 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+        // dd($produto);
+
+        $produto->delete($produto);
+        session()->flash('mensagem', 'Produto excluído!');
+        return redirect()->route('produtos.index');
     }
 }

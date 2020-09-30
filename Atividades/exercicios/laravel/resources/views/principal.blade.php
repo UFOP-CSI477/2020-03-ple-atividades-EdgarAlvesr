@@ -38,6 +38,14 @@
         </nav>
 
         <!-- https://laravel.com/docs/8.x/responses#redirecting-with-flashed-session-data //-->
+        @if(session('mensagem'))
+
+            <div class="alert alert-success">
+                {{ session('mensagem') }}
+            </div>
+
+        @endif
+
         <!-- https://laravel.com/docs/8.x/blade#defining-a-layout //-->
         <!-- CONTEUDO DA PAGINA //-->
         <div id="conteudo">
