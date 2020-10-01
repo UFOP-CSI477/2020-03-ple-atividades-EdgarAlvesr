@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compra;
+use App\Models\Pessoa;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
-class ProdutoController extends Controller
+class CompraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +16,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::orderBy('id')->get();
+        $compras = Compra::orderBy('id')->get();
         
-        return view('produtos.index', ['produtos' => $produtos]);
+        return view('compras.index', ['compras' => $compras]);
     }
 
     /**
@@ -27,7 +29,7 @@ class ProdutoController extends Controller
     public function create() //method = 'post'. Action = "store()"
     {
         //Cria formulário somente. Redireciona para store fazer a persistência dos dados
-        return view('produtos.create');
+        return view('compras.create');
     }
 
     /**
@@ -46,70 +48,70 @@ class ProdutoController extends Controller
         
         // dd($request);
 
-        Produto::create($request->all());
-        session()->flash('mensagem', 'Produto cadastrado com sucesso!');
-        return redirect()->route('produtos.index');
+        Compra::create($request->all());
+        session()->flash('mensagem', 'Compra cadastrada com sucesso!');
+        return redirect()->route('compras.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Compra  $compra
      * @return \Illuminate\Http\Response
      */
-    public function show(Produto $produto)
+    public function show(Compra $compra)
     {
-        return view('produtos.show', ['produto' => $produto]);
+        return view('compras.show', ['compra' => $compra]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Compra  $compra
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produto $produto)
+    public function edit(Compra $compra)
     {
-        return view('produtos.edit', ['produto' => $produto]);
+        $pessoas = Pessoa::orderBy('nome')->get();
+        $produtos = Produto::orderBy('nome')->get();
+        return view('compras.edit',
+            ['compra' => $compra,
+            'pessoas' => $pessoas,
+            'produtos' => $produtos]
+        );
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Compra  $compra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produto $produto)
+    public function update(Request $request, Compra $compra)
     {
         // dump($request->all());
-        // dd($produto);
+        // dd($compra);
 
-        $produto->fill($request->all());
-        $produto->save();
+        $compra->fill($request->all());
+        $compra->save();
 
-        session()->flash('mensagem', "Produto atualizado com sucesso");
-        return redirect()->route('produtos.index');
+        session()->flash('mensagem', "Compra atualizada com sucesso");
+        return redirect()->route('compras.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Produto  $produto
+     * @param  \App\Models\Compra  $compra
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produto $produto)
+    public function destroy(Compra $compra)
     {
-        // dd($estado);
+        // dd($compra);
 
-        //Validação no servidor (aqui)
-        if($produto->compras->count() > 0){
-            session()->flash('mensagem', 'Exclusão não permitida! Existem compras associadas.');
-        } else {
-            $produto->delete();
-            session()->flash('mensagem', 'Produto excluído com sucesso!');
-        }
-
-        return redirect()->route('produtos.index');
+        $compra->delete($compra);
+        session()->flash('mensagem', 'Compra excluída!');
+        return redirect()->route('compras.index');
     }
 }

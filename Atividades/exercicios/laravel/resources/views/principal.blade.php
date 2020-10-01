@@ -33,7 +33,8 @@
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link" href="{{route('principal')}}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('produtos.index')}}">Produtos</a></li>
-                <li class="nav-item"><a class="nav-link" ref="/vendas">Vendas</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('pessoas.index')}}">Pessoas</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('compras.index')}}">Compras</a></li>
             </ul>
         </nav>
 
