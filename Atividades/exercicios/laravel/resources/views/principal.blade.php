@@ -35,6 +35,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('produtos.index')}}">Produtos</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('pessoas.index')}}">Pessoas</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('compras.index')}}">Compras</a></li>
+                <li class="nav-item"><a class="nav-link" href="/relatorios">Relatórios</a></li>
             </ul>
         </nav>
 
