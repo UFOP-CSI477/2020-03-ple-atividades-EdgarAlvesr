@@ -14,7 +14,9 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        //
+        $equipamentos = Equipamento::orderBy('id')->get();
+
+        return view('equipamentos.index', ['equipamentos' => $equipamentos]);
     }
 
     /**
@@ -24,7 +26,8 @@ class EquipamentoController extends Controller
      */
     public function create()
     {
-        //
+        //Cria formulário somente. Redireciona para store fazer a persistência dos dados
+        return view('equipamentos.create');
     }
 
     /**
@@ -35,7 +38,9 @@ class EquipamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Equipamento::create($request->all());
+        session()->flash('msg_success', 'Equipamento cadastrado com sucesso!');
+        return redirect()->route('equipamentos.index');
     }
 
     /**
@@ -46,7 +51,7 @@ class EquipamentoController extends Controller
      */
     public function show(Equipamento $equipamento)
     {
-        //
+        return view('equipamentos.show', ['equipamento' => $equipamento]);
     }
 
     /**
@@ -57,7 +62,7 @@ class EquipamentoController extends Controller
      */
     public function edit(Equipamento $equipamento)
     {
-        //
+        return view('equipamentos.edit', ['equipamento' => $equipamento]);
     }
 
     /**
@@ -69,7 +74,11 @@ class EquipamentoController extends Controller
      */
     public function update(Request $request, Equipamento $equipamento)
     {
-        //
+        $equipamento->fill($request->all());
+        $equipamento->save();
+
+        session()->flash('msg_success', "Equipamento atualizado com sucesso!");
+        return redirect()->route('equipamentos.index');
     }
 
     /**
@@ -80,6 +89,13 @@ class EquipamentoController extends Controller
      */
     public function destroy(Equipamento $equipamento)
     {
-        //
+        if($equipamento->registros->count() > 0){
+            session()->flash('msg_fail', 'Exclusão não permitida! Existem manutenções associadas.');
+        } else {
+            $equipamento->delete();
+            session()->flash('msg_success', 'Equipamento excluído com sucesso!');
+        }
+
+        return redirect()->route('equipamentos.index');
     }
 }

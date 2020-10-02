@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AreaAdministrativaController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AreaGeralController;
@@ -22,14 +23,23 @@ Route::get('/', function () {
     return view('principal');
 })->name('principal');
 
-Route::resource('/users', UserController::class);
-Route::resource('/registros', RegistroController::class);
-Route::resource('/equipamentos', EquipamentoController::class);
-Route::get('/areageral', [AreaGeralController::class, 'index']);
-Route::get('/areageral/equipamentos', [AreaGeralController::class, 'equipamentos']);
-Route::get('/areageral/manutencoes', [AreaGeralController::class, 'manutencoes']);
+Route::resource('/users', UserController::class)->middleware('auth');
+Route::resource('/registros', RegistroController::class)->middleware('auth');
+Route::resource('/equipamentos', EquipamentoController::class)->middleware('auth');
+
+Route::get('/areageral', [AreaGeralController::class, 'index'])->name('areageral.index');
+Route::get('/areageral/equipamentos', [AreaGeralController::class, 'equipamentos'])->name('areageral.equipamentos');
+Route::get('/areageral/manutencoes', [AreaGeralController::class, 'manutencoes'])->name('areageral.manutencoes');
+
+Route::get('/areaadministrativa', [AreaAdministrativaController::class, 'index'])->name('areaadministrativa.index');
+Route::get('/areaadministrativa/login', [AreaAdministrativaController::class, 'login'])->name('areaadministrativa.login');
+Route::get('/areaadministrativa/rel_usuarios', [AreaAdministrativaController::class, 'rel_usuarios'])->name('areaadministrativa.rel_usuarios');
+Route::get('/areaadministrativa/rel_manutencoes', [AreaAdministrativaController::class, 'rel_manutencoes'])->name('areaadministrativa.rel_manutencoes');
 
 // Route::view('/areageral', 'areageral.index');
 // Route::view('/areageral/equipamentos', 'areageral.equipamentos');
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

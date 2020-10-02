@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipamento;
 use App\Models\Registro;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller
@@ -14,7 +16,8 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        //
+        $registros = Registro::orderBy('id', 'desc')->get();
+        return view('registros.index', ['registros' => $registros]);
     }
 
     /**
@@ -24,7 +27,10 @@ class RegistroController extends Controller
      */
     public function create()
     {
-        //
+        $equipamentos = Equipamento::orderBy('name')->get();
+        $users = User::orderBy('name')->get();
+        
+        return view('registros.create', ['equipamentos' => $equipamentos, 'users' => $users]);
     }
 
     /**
@@ -35,7 +41,10 @@ class RegistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        Registro::create($request->all());
+        session()->flash('msg_success', 'Manutenção cadastrada com sucesso!');
+        return redirect()->route('registros.index');
     }
 
     /**
@@ -46,7 +55,7 @@ class RegistroController extends Controller
      */
     public function show(Registro $registro)
     {
-        //
+        return view('registros.show', ['registro' => $registro]);
     }
 
     /**
@@ -57,7 +66,10 @@ class RegistroController extends Controller
      */
     public function edit(Registro $registro)
     {
-        //
+        $equipamentos = Equipamento::orderBy('name')->get();
+        $users = User::orderBy('name')->get();
+        
+        return view('registros.edit', ['registro' => $registro, 'equipamentos' => $equipamentos, 'users' => $users]);
     }
 
     /**
@@ -69,7 +81,11 @@ class RegistroController extends Controller
      */
     public function update(Request $request, Registro $registro)
     {
-        //
+        $registro->fill($request->all());
+        $registro->save();
+
+        session()->flash('msg_success', "Manutenção atualizada com sucesso!");
+        return redirect()->route('registros.index');
     }
 
     /**
@@ -80,6 +96,9 @@ class RegistroController extends Controller
      */
     public function destroy(Registro $registro)
     {
-        //
+        $registro->delete();
+        session()->flash('msg_success', 'Manutenção excluída com sucesso!');
+
+        return redirect()->route('registros.index');
     }
 }
