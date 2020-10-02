@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AreaGeralController;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\UserController;
@@ -24,5 +25,11 @@ Route::get('/', function () {
 Route::resource('/users', UserController::class);
 Route::resource('/registros', RegistroController::class);
 Route::resource('/equipamentos', EquipamentoController::class);
+Route::get('/areageral', [AreaGeralController::class, 'index']);
+Route::get('/areageral/equipamentos', [AreaGeralController::class, 'equipamentos']);
+Route::get('/areageral/manutencoes', [AreaGeralController::class, 'manutencoes']);
+
+// Route::view('/areageral', 'areageral.index');
+// Route::view('/areageral/equipamentos', 'areageral.equipamentos');
 
 
