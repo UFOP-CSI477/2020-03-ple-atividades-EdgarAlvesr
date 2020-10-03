@@ -101,7 +101,6 @@
                 <h1 class="logo">Bits Manutenção LTDA</h1>
             </div>
             <div class="row justify-content-center">
-                <!-- <h1 class="logo">Bits Manutenção LTDA</h1> -->
                 <h1>&#128515;</h1>
             </div>
             @show
