@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AreaGeralController;
+use App\Http\Controllers\AreaAdministrativaController;
+use App\Http\Controllers\PessoaController;
+use App\Http\Controllers\ColetaController;
+use App\Http\Controllers\AgendamentoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +20,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('principal');
+})->name('principal');
+
+
+Route::resource('/pessoas', PessoaController::class)->middleware('auth');
+Route::resource('/coletas', ColetaController::class)->middleware('auth');
+Route::resource('/agendamentos', AgendamentoController::class)->middleware('auth');
+
+Route::get('/areageral', [AreaGeralController::class, 'index'])->name('areageral.index');
+
+Route::get('/areaadministrativa', [AreaAdministrativaController::class, 'index'])->name('areaadministrativa.index');
+Route::get('/areaadministrativa/login', [AreaAdministrativaController::class, 'login'])->name('areaadministrativa.login');
+
 
 Auth::routes();
 
