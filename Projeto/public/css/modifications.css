@@ -1,0 +1,8 @@
+
+/* Modificações no tema (criação de novos estilos) */
+
+.bg-gradient-escuro {
+    background-color: #343a40;
+    background-image: linear-gradient(180deg, #343a40 10%, #212529 100%);
+    background-size: cover;
+  }
