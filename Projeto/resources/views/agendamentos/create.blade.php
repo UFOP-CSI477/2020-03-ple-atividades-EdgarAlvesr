@@ -71,13 +71,6 @@
 
             </form>
         </div>
-        <div class="my-4">
-            <h4>Visualizar salas</h4>
-        </div>
-        <div>
-            <span>Dia</span>
-            <span>Horário</span>
-        </div>
     </div>
 </div>
 
