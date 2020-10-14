@@ -16,13 +16,13 @@ use App\Http\Controllers\GeralController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/principal', function () {
     return view('principal');
 })->name('principal');
 
-Route::get('/sbadmin', function () {
-    return view('sbadmin');
-})->name('sbadmin');
+Route::get('/', function () {
+    return view('splashScreen');
+})->name('splashScreen');
 
 // Route::get('/agendamentos', function () {
 //     return view('agendamentos.index');
