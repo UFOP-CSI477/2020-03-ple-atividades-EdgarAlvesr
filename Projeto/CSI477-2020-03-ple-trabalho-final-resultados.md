@@ -12,9 +12,9 @@
   - Backend:
     - PHP 7.4.10
     - Laravel Framework 8.5.0
+    - Blade Template (Laravel)
     - Banco de Dados Sqlite 3.33.0
   - Frontend:
-    - Blade Template (Laravel)
     - Bootstrap 4.5
     - SB Admin 2 Bootstrap Theme
     - JQuery
