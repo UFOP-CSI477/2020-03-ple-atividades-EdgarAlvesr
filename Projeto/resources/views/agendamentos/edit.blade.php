@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="form-group col-sm-3">
                         <label for="sala_id">Sala (Capacidade de pessoas)</label>
-                        <select name="sala_id" id="sala_id" class="form-control">
+                        <select name="sala_id" id="sala_id" class="form-control" onchange="carregarHorarios()">
                         @foreach($salas as $sala)
                             
                             <option value="{{$sala->id}}"
@@ -38,26 +38,28 @@
     
                     <div class="form-group col-sm-3">
                         <label for="data" class="mr-2">Data</label>
-                        <input id="data" name="data" type="date" value="{{$agendamento->data}}" class="form-control">
+                        <input id="data" name="data" type="date" value="{{$agendamento->data}}" class="form-control" onchange="carregarHorarios()">
                     </div>
 
                     <div class="form-group col-sm-2">
                         <label for="horario_inicial">Horário de início</label>
-                        <select name="horario_inicial" id="horario_inicial" class="form-control">
-                            @for ($i = 7; $i <= 22; $i++)
+                        <select name="horario_inicial" id="horario_inicial" class="form-control" onchange="carregarHorariosFinais()">
+                            <option value=""></option>
+                            <!-- @for ($i = 7; $i <= 22; $i++)
                             <option value="{{$i}}:00" @if( $i.':00' == $agendamento->horario_inicial) selected @endif >{{$i}}:00</option>
                             <option value="{{$i}}:30" @if( $i.':30' == $agendamento->horario_inicial) selected @endif >{{$i}}:30</option>
-                            @endfor
+                            @endfor -->
                         </select>
                     </div>
     
                     <div class="form-group col-sm-2">
                         <label for="horario_final">Horário final</label>
                         <select name="horario_final" id="horario_final" class="form-control">
-                            @for ($i = 7; $i <= 22; $i++)
+                            <option value=""></option>
+                            <!-- @for ($i = 7; $i <= 22; $i++)
                             <option value="{{$i}}:00" @if( $i.':00' == $agendamento->horario_final) selected @endif >{{$i}}:00</option>
                             <option value="{{$i}}:30" @if( $i.':30' == $agendamento->horario_final) selected @endif >{{$i}}:30</option>
-                            @endfor
+                            @endfor -->
                         </select>
                     </div>
     
@@ -95,3 +97,9 @@
 
 
 @endsection
+
+
+@push('scripts')
+    <!-- Datatables -->
+    <script src="{{ asset('js/verificaHorarios.js') }}"></script>
+@endpush
