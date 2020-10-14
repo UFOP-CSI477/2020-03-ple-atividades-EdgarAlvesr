@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AgendamentoController;
+use App\Http\Controllers\GeralController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +17,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
-});
+    return view('principal');
+})->name('principal');
+
+Route::get('/sbadmin', function () {
+    return view('sbadmin');
+})->name('sbadmin');
+
+// Route::get('/agendamentos', function () {
+//     return view('agendamentos.index');
+// })->name('agendamentos.index');
 
 
+//Autorização feita no controller para determinados métodos
+Route::resource('/agendamentos', AgendamentoController::class);
 
+Route::get('/geral/login', [GeralController::class, 'login'])->name('geral.login');
 
-
+Route::get('/ajax/horariosIniciais', [GeralController::class, 'ajaxHorariosIniciais'])->name('geral.ajaxHorariosIniciais');
 
 
 

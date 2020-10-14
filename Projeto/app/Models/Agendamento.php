@@ -16,7 +16,7 @@ class Agendamento extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function agendamento(){
-        return $this->belongsTo(Agendamento::class);
+    public function sala(){
+        return $this->belongsTo(Sala::class);
     }
 }
