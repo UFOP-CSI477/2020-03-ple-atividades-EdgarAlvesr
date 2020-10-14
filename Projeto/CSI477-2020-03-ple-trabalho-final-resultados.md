@@ -51,13 +51,23 @@
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
   Para executar a aplicação deve-se fazer o download do código fonte e instalar as dependêcias do Laravel na pasta baixada. Após a configuração do Laravel, deve-se:
     - Renomear o arquivo '.env.example' para '.env', colar as configurações de BD abaixo no campo especificado no arquivo, alterando o caminho do BD de acordo com a localização da pasta em seu computador e criando um arquivo de BD '.sqlite' na pasta '/Projeto/database/':
-      -DB_CONNECTION=sqlite
-      -#DB_HOST=127.0.0.1
-      -#DB_PORT=3306
-      -DB_DATABASE="/Caminho_do_Projeto_no_seu_PC/Projeto/database/sistemaagendamentosalas.sqlite"
-      -#DB_USERNAME=root
-      -#DB_PASSWORD=
-      -DB_FOREIGN_KEYS=true
+    
+    ```
+      DB_CONNECTION=sqlite
+      
+      #DB_HOST=127.0.0.1
+      
+      #DB_PORT=3306
+      
+      DB_DATABASE="/Caminho_do_Projeto_no_seu_PC/Projeto/database/sistemaagendamentosalas.sqlite"
+      
+      #DB_USERNAME=root
+      
+      #DB_PASSWORD=
+      
+      DB_FOREIGN_KEYS=true
+      
+    ```
 
   Após a configuração, deve-se fazer as migrations e executar o servidor, ou seja, utilizar os seguintes comandos em um terminal aberto na pasta do projeto:
     - php artisan migrate:fresh
