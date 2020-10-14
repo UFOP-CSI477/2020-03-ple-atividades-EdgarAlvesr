@@ -21,6 +21,61 @@ function preencherSelectHorariosIniciais(data) {
     }
 }
 
+function preencherSelectHorariosFinais(data) {
+
+    let horarios_fim = document.getElementById("horario_final");
+    limparSelect(horarios_fim);
+
+    for(let index in data) {
+        const fim_value = data[index];
+
+        let option = document.createElement("option");
+        option.value = fim_value;
+        option.innerHTML = fim_value;
+
+        horarios_fim.appendChild(option);
+    }
+}
+
+function carregarHorariosFinais() {
+
+    const salas = document.getElementById("sala_id");
+    const sala_index = salas.selectedIndex;
+    const sala_id = salas.options[sala_index].value;
+
+    const data = document.getElementById("data").value;
+
+    const horarios_ini = document.getElementById("horario_inicial");
+    const inicial_index = horarios_ini.selectedIndex;
+    // se nenhuma opção estiver selecionada "inicial_index = -1"
+
+    const horarios_fim = document.getElementById("horario_final");
+    limparSelect(horarios_fim);
+
+    if (sala_id == "" || data == "" || inicial_index == -1){
+        return;
+    }
+
+    const inicial_value = horarios_ini.options[inicial_index].value;
+
+    $.ajax({
+        type: 'GET',
+        url: '/ajax/horariosFinais',
+        data: {
+            sala_id: sala_id,
+            data: data,
+            horario_inicial: inicial_value,
+        },
+        datatype: "json",
+        success: function (data) {
+            console.log(data);
+            preencherSelectHorariosFinais(data);
+        }
+    });
+    
+    
+}
+
 function carregarHorarios() {
 
     const salas = document.getElementById("sala_id");
@@ -52,22 +107,4 @@ function carregarHorarios() {
             preencherSelectHorariosIniciais(data);
         }
     });
-}
-
-
-function carregarHorariosFinais() {
-
-    let horarios_fim = document.getElementById("horario_final");
-    limparSelect(horarios_fim);
-    
-    const horarios_ini = document.getElementById("horario_inicial");
-
-    for (let index = 0; index < horarios_ini.length; index++) {
-        const hora_ini = horarios_ini[index].value;
-
-        //VERIFICAR LOGICA PRA FAZER PULAR HORARIOS
-        
-    }
-    
-    
 }

@@ -35,6 +35,7 @@ Route::resource('/agendamentos', AgendamentoController::class);
 Route::get('/geral/login', [GeralController::class, 'login'])->name('geral.login');
 
 Route::get('/ajax/horariosIniciais', [GeralController::class, 'ajaxHorariosIniciais'])->name('geral.ajaxHorariosIniciais');
+Route::get('/ajax/horariosFinais', [GeralController::class, 'ajaxHorariosFinais'])->name('geral.ajaxHorariosFinais');
 
 
 

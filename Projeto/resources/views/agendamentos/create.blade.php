@@ -40,12 +40,14 @@
                     <div class="form-group col-sm-2">
                         <label for="horario_inicial">Horário de início</label>
                         <select name="horario_inicial" id="horario_inicial" class="form-control" onchange="carregarHorariosFinais()">
+                            <option value=""></option>
                         </select>
                     </div>
     
                     <div class="form-group col-sm-2">
                         <label for="horario_final">Horário final</label>
                         <select name="horario_final" id="horario_final" class="form-control">
+                            <option value=""></option>
                         </select>
                     </div>
     
