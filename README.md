@@ -1,6 +1,6 @@
 # CSI477 - Estrutura básica do repositório
 
-## Atualize os seus dados:
+## Dados:
 
 - Nome: Edgar Henrique Alves Rodrigues
 - Matrícula: 15.1.8029
